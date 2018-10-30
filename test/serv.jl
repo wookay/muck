@@ -1,5 +1,9 @@
 # https://github.com/wookay/Bukdu.jl
 
+#=
+julia -i serve.jl
+=#
+
 using Bukdu # ApplicationController Conn redirect_to routes get plug Plug CLI
 
 struct FrontController <: ApplicationController
