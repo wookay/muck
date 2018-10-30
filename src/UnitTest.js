@@ -8,7 +8,7 @@ function print(str) {
   if ('undefined' == typeof(window)) {
     process.stdout.write(str)
   } else {
-    document.getElementsByTagName('pre')[0].innerHTML += str
+    document.getElementById('stdout').innerHTML += str
   }
 }
 function puts(str) {
