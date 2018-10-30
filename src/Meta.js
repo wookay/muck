@@ -12,9 +12,12 @@ class DataType {
 Bool = Boolean;
 
 Meta = {
+  // Meta.isa
   isa: function(x, typ) {
     return this.typeof(x) === typ;
   },
+
+  // Meta.typeof
   typeof: function(x) {
     let typ = typeof(x);
     switch (typ) {

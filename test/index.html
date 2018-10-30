@@ -9,7 +9,14 @@
   </head>
 <body>
 <pre>
-<script>Tarp.require({main: "./test/runtests.js"})</script>
+<script>
+(function() {
+  require = function (path) {
+    return Tarp.require({main: path})
+  }
+  require("../test/runtests.js")
+})()
+</script>
 </pre>
 </body>
 </html>

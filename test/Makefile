@@ -6,3 +6,6 @@ meta:
 
 primitives:
 	node -e 'require("./test_primitives.js"); UnitTest.run(Test)'
+
+util:
+	node -e 'require("./test_util.js"); UnitTest.run(Test)'
