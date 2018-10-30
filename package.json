@@ -6,5 +6,8 @@
   "repository": "git@github.com:wookay/mucko.git",
   "author": "WooKyoung Noh <wookay.noh@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "node test/runtests.js"
+  },
   "private": false
 }

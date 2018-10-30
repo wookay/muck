@@ -1,6 +1,15 @@
 mucko.js
 ========
 
+[![Build Status](https://travis-ci.org/wookay/mucko.svg?branch=master)](https://travis-ci.org/wookay/mucko)
+
+
+* Yarn https://yarn.pm/mucko
+```
+yarn add mucko
+```
+
+
 * Run tests with Node.js
 ```
 mucko/test$ node runtests.js
