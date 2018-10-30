@@ -1,8 +1,8 @@
-// muck test_primitives.js
+// mucko test_primitives.js
 
-var muck = require("../index.js")
-var Test = muck.Test
-var string = muck.string
+var mucko = require("../index.js")
+var Test = mucko.Test
+var string = mucko.string
 
 
 Test.test_undefined = function() {

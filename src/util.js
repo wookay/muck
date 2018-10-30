@@ -1,4 +1,4 @@
-// muck util.js
+// mucko util.js
 
 util = {
     // util.require

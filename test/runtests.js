@@ -1,4 +1,4 @@
-// muck runtests.js
+// mucko runtests.js
 
 require("./test_primitives.js")
 require("./test_meta.js")

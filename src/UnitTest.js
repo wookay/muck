@@ -1,4 +1,4 @@
-// muck UnitTest.js
+// mucko UnitTest.js
 
 Test = {}
 DOT = "."

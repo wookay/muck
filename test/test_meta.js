@@ -1,12 +1,12 @@
-// muck test_meta.js
+// mucko test_meta.js
 
-var muck = require("../index.js")
-var Test = muck.Test
-var Meta = muck.Meta
-var Null = muck.Null
-var Undefined = muck.Undefined
-var DataType = muck.DataType
-var string = muck.string
+var mucko = require("../index.js")
+var Test = mucko.Test
+var Meta = mucko.Meta
+var Null = mucko.Null
+var Undefined = mucko.Undefined
+var DataType = mucko.DataType
+var string = mucko.string
 
 
 Test.test_meta_typeof = function() {

@@ -1,4 +1,4 @@
-// muck Meta.js
+// mucko Meta.js
 
 class Undefined {
 }

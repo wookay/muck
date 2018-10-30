@@ -1,4 +1,4 @@
-// muck string.js
+// mucko string.js
 
 var meta = require("./Meta.js")
 var Meta = meta.Meta

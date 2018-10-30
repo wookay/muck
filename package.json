@@ -1,9 +1,9 @@
 {
-  "name": "muck",
+  "name": "mucko",
   "version": "0.1.0",
-  "description": "muck.js",
+  "description": "mucko.js",
   "main": "index.js",
-  "repository": "git@github.com:wookay/muck.git",
+  "repository": "git@github.com:wookay/mucko.git",
   "author": "WooKyoung Noh <wookay.noh@gmail.com>",
   "license": "MIT",
   "private": false

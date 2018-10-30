@@ -1,7 +1,7 @@
-// muck test_util.js
+// mucko test_util.js
 
-var muck = require("../index.js")
-var util = muck.util
+var mucko = require("../index.js")
+var util = mucko.util
 
 
 Test.test_util_require = function() {

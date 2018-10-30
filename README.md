@@ -1,9 +1,9 @@
-muck.js
-=======
+mucko.js
+========
 
 * Run tests with Node.js
 ```
-muck/test$ node runtests.js
+mucko/test$ node runtests.js
 Started
 ..................................
 Finished in 0.002 seconds.
@@ -13,6 +13,6 @@ Finished in 0.002 seconds.
 
 * Run tests in the web browser
 ```
-muck/test$ julia -i serve.jl
+mucko/test$ julia -i serve.jl
 ```
-![webbrowser](https://github.com/wookay/muck/blob/master/docs/webbrowser.png?raw=true)
+![webbrowser](https://github.com/wookay/mucko/blob/master/docs/webbrowser.png?raw=true)
