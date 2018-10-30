@@ -1,0 +1,10 @@
+{
+  "name": "muck",
+  "version": "0.1.0",
+  "description": "muck.js",
+  "main": "index.js",
+  "repository": "git@github.com:wookay/muck.git",
+  "author": "WooKyoung Noh <wookay.noh@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
