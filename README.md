@@ -25,3 +25,7 @@ Finished in 0.002 seconds.
 mucko/test$ julia -i serve.jl
 ```
 ![webbrowser](https://github.com/wookay/mucko/blob/master/docs/webbrowser.png?raw=true)
+
+
+* Examples
+  - jscat https://github.com/wookay/jscat
