@@ -25,17 +25,19 @@ function concatBuffer(a, b) {
 Base = {
     // Base.println
     println: function(io, ...args) {
-        if (Meta.isa(io, TTY)) {
+        if (Meta.isa(io, IOBuffer)) {
+            arr = new TextEncoder().encode(strings.string(args, '\n'))
+            io.data = concatBuffer(io.data, arr)
+            io.ptr += arr.length
+        } else {
             var out = ''
+            if (!Meta.isa(io, TTY)) {
+                out += io
+            }
             for (var i=0; i < args.length; i++) {
                 out += args[i]
             }
             console.log(out)
-        } else {
-            str = args
-            arr = new TextEncoder().encode(strings.string(str, '\n'))
-            io.data = concatBuffer(io.data, arr)
-            io.ptr += arr.length
         }
     },
 

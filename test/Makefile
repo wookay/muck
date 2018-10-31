@@ -1,4 +1,4 @@
-all:
+test:
 	node runtests.js
 
 meta:
@@ -9,6 +9,9 @@ primitives:
 
 base:
 	node -e 'require("./test_base.js"); UnitTest.run(Test)'
+
+sys:
+	node -e 'require("./test_sys.js"); UnitTest.run(Test)'
 
 util:
 	node -e 'require("./test_util.js"); UnitTest.run(Test)'
