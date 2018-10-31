@@ -2,7 +2,7 @@
 
 var mucko = require("../index.js")
 var Test = mucko.Test
-var string = mucko.string
+var string = mucko.Base.string
 
 
 Test.test_undefined = function() {

@@ -6,7 +6,7 @@ var Meta = mucko.Meta
 var Null = mucko.Null
 var Undefined = mucko.Undefined
 var DataType = mucko.DataType
-var string = mucko.string
+var string = mucko.Base.string
 
 
 Test.test_meta_typeof = function() {

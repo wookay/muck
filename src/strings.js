@@ -1,9 +1,17 @@
-// mucko string.js
+// mucko strings.js
 
 var meta = require("./Meta.js")
 var Meta = meta.Meta
 var DataType = meta.DataType
 
+
+function _String(buf) {
+    if (typeof Buffer === "undefined") {
+        return new TextDecoder('utf8').decode(buf)
+    } else {
+        return Buffer.from(buf).toString('utf8')
+    }
+}
 
 function string() {
     var out = '';
@@ -29,6 +37,7 @@ function repr(x) {
 
 
 module.exports = {
+    String: _String,
     string,
     repr,
 }
