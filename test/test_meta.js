@@ -35,3 +35,12 @@ Test.test_meta_typeof = function() {
 Test.test_meta_string = function() {
     assert_equal("Array", string(Array));
 }
+
+Test.test_meta_body = function() {
+    function f() {
+        return 1+2
+    }
+    assert_equal("return 1+2", Meta.body(f))
+    test_throws(Error, function() { Meta.body(1+2) })
+    test_throws(Error("Not a Function"), function() { Meta.body(1+2) })
+}

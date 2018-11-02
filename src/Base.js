@@ -3,6 +3,8 @@
 var meta = require("./Meta.js")
 var Meta = meta.Meta
 var strings = require("./strings.js")
+var ranges = require("./range.js")
+var floats = require("./float.js")
 
 
 function IOBuffer() {
@@ -68,6 +70,12 @@ Base = {
 
     // Base.repr
     repr: strings.repr,
+
+    // Base.range
+    range: ranges.range,
+
+    // Base.Inf
+    Inf: floats.Inf,
 }
 
 

@@ -58,8 +58,26 @@ assert_true = function(expected) {
   _assert_true(expected)
 }
 
+test_throws = function(errmsg, f) {
+    got_the_error = false
+    try {
+        f()
+    } catch (err) {
+        if (Error === errmsg) {
+            got_the_error = true
+        } else if (errmsg.message == err.message) {
+            got_the_error = true
+        }
+    }
+    if (!got_the_error) {
+        puts('\nAssertion failed in ' + f)
+        puts('Expected: ' + errmsg)
+        UnitTest.failed += 1
+    }
+}
+
 var _assert_true = function(is_true) {
-  if (is_true) {
+  if (is_true == true) {
     UnitTest.passed += 1
     if (UnitTest.dot_if_passed) {
       print(DOT)

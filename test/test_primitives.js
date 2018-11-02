@@ -35,3 +35,7 @@ Test.test_function = function() {
   var f = function() { }
   assert_equal(f, f)
 }
+
+Test.test_bool = function() {
+  assert_true(!0)
+}
