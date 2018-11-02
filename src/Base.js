@@ -1,81 +1,50 @@
 // mucko Base.js
 
-var meta = require("./Meta.js")
-var Meta = meta.Meta
+var boot = require("./boot.js")
+var coreio = require("./coreio.js")
 var strings = require("./strings.js")
 var ranges = require("./range.js")
 var floats = require("./float.js")
+var arrays = require("./array.js")
+var parsing = require("./parse.js")
 
-
-function IOBuffer() {
-    this.data = new Uint8Array([])
-    this.ptr = 0
-}
-IOBuffer.prototype.constructor = IOBuffer
-
-function TTY() {
-}
-stdout = new TTY()
-
-function concatBuffer(a, b) {
-    var tmp = new Uint8Array(a.byteLength + b.byteLength)
-    tmp.set(new Uint8Array(a), 0)
-    tmp.set(new Uint8Array(b), a.byteLength)
-    return tmp.buffer
-}
 
 Base = {
-    // Base.println
-    println: function(io, ...args) {
-        if (Meta.isa(io, IOBuffer)) {
-            arr = new TextEncoder().encode(strings.string(args, '\n'))
-            io.data = concatBuffer(io.data, arr)
-            io.ptr += arr.length
-        } else {
-            var out = ''
-            if (!Meta.isa(io, TTY)) {
-                out += io
-            }
-            for (var i=0; i < args.length; i++) {
-                out += args[i]
-            }
-            console.log(out)
-        }
-    },
+    // -- boot
+    DataType: boot.DataType,     // Base.DataType
+    Undefined: boot.Undefined,   // Base.Undefined
+    Null: boot.Null,             // Base.Null
+    Nothing: boot.Nothing,       // Base.Nothing
+    nothing: boot.nothing,       // Base.nothing
+    Bool: boot.Bool,             // Base.Bool
+    Int: boot.Int,               // Base.Int
+    Float64: boot.Float64,       // Base.Float64 
 
-    // Base.IOBuffer
-    IOBuffer: IOBuffer,
+    // -- coreio
+    println: coreio.println,     // Base.println
+    IOBuffer: coreio.IOBuffer,   // Base.IOBuffer
+    seekstart: coreio.seekstart, // Base.seekstart
+    read: coreio.read,           // Base.read
+    stdout: coreio.stdout,       // Base.stdout
 
-    // Base.seekstart
-    seekstart: function(io) {
-        io.ptr = 0
-    },
+    // -- strings
+    String: strings.String,      // Base.String
+    string: strings.string,      // Base.string
+    repr: strings.repr,          // Base.repr
 
-    // Base.read
-    read: function(io) {
-        len = io.data.byteLength
-        arr = io.data.slice(io.ptr, len)
-        io.ptr = len
-        return arr
-    },
+    // -- range
+    range: ranges.range,         // Base.range
 
-    // Base.stdout
-    stdout: stdout,
+    // -- float
+    Inf: floats.Inf,             // Base.Inf
 
-    // Base.String
-    String: strings.String,
+    // -- array
+    push: arrays.push,           // Base.push
+    pushfirst: arrays.pushfirst, // Base.pushfirst
+    splice: arrays.splice,       // Base.splice
 
-    // Base.string
-    string: strings.string,
-
-    // Base.repr
-    repr: strings.repr,
-
-    // Base.range
-    range: ranges.range,
-
-    // Base.Inf
-    Inf: floats.Inf,
+    // -- parse
+    parse: parsing.parse,        // Base.parse
 }
 
 

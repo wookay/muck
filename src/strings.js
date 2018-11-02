@@ -1,8 +1,8 @@
 // mucko Base strings.js
 
 var meta = require("./Meta.js")
+var boot = require("./boot.js")
 var Meta = meta.Meta
-var DataType = meta.DataType
 
 
 function _String(buf) {
@@ -14,6 +14,7 @@ function _String(buf) {
 }
 
 function string() {
+    let DataType = boot.DataType
     var out = '';
     for (var i=0; i < arguments.length; i++) {
         let x = arguments[i];

@@ -2,7 +2,7 @@
 
 var mucko = require("../index.js")
 var Test = mucko.Test
-var string = mucko.Base.string
+var Base = mucko.Base
 
 
 Test.test_undefined = function() {
@@ -15,6 +15,7 @@ Test.test_number = function() {
 }
 
 Test.test_string = function() {
+  let string = Base.string
   assert_equal("abc", "a" + "b" + "c")
   assert_equal("abc", string("a", "b", "c"))
   assert_equal(3, "abc".length)

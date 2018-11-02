@@ -3,13 +3,14 @@
 var mucko = require("../index.js")
 var Test = mucko.Test
 var Meta = mucko.Meta
-var Null = mucko.Null
-var Undefined = mucko.Undefined
-var DataType = mucko.DataType
-var string = mucko.Base.string
+var Base = mucko.Base
 
 
 Test.test_meta_typeof = function() {
+    let Null = Base.Null
+    let Undefined = Base.Undefined
+    let DataType = Base.DataType
+    let Bool = Base.Bool
     assert_equal(String, String)
     assert_equal(Null, Meta.typeof(null))
     assert_equal(String, Meta.typeof(""))
@@ -33,7 +34,8 @@ Test.test_meta_typeof = function() {
 }
 
 Test.test_meta_string = function() {
-    assert_equal("Array", string(Array));
+    let string = Base.string
+    assert_equal("Array", string(Array))
 }
 
 Test.test_meta_body = function() {

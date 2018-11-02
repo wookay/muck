@@ -1,20 +1,10 @@
 // mucko Meta.js
 
-class Undefined {
-}
+var boot = require("./boot.js")
+let DataType = boot.DataType
+let Undefined = boot.Undefined
+let Null = boot.Null
 
-class Null {
-}
-
-class DataType {
-}
-
-Bool = Boolean
-
-class Nothing {
-}
-
-nothing = new Nothing()
 
 Meta = {
     // Meta.isa
@@ -62,7 +52,7 @@ Meta = {
         } // if "object" === typ
        
         return typ
-    } ,
+    },
 
     // Meta.body
     body: function (f) {
@@ -78,10 +68,4 @@ Meta = {
 
 module.exports = {
     Meta,
-    Undefined,
-    Null,
-    DataType,
-    Bool,
-    Nothing,
-    nothing,
 }
