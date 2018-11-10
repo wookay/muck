@@ -27,14 +27,7 @@ function println(io, ...args) {
         io.data = concatBuffer(io.data, arr)
         io.ptr += arr.length
     } else {
-        var out = ''
-        if (!Meta.isa(io, TTY)) {
-            out += io
-        }
-        for (var i=0; i < args.length; i++) {
-            out += args[i]
-        }
-        console.log(out)
+        console.log.apply(console, [io].concat(args))
     }
 }
 

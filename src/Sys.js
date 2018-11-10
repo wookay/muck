@@ -1,13 +1,16 @@
 // mucko Sys.js
 
-Sys = {
-    // Sys.isbrowser
-    isbrowser: function() {
-        return typeof window !== "undefined"
-    },
+function get_sys() {
+    Sys = {
+        // Sys.isbrowser
+        isbrowser: function() {
+            return typeof window !== "undefined"
+        },
+    }
+    return Sys
 }
 
 
 module.exports = {
-    Sys,
+    Sys: get_sys(),
 }

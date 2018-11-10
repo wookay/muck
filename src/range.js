@@ -1,7 +1,7 @@
 // mucko Base range.js
 
-var meta = require("./Meta.js")
-var nothing = meta.nothing
+var boot = require("./boot.js")
+let nothing = boot.nothing
 
 
 function _range(start, {step=1, stop=nothing}) {
