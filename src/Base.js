@@ -41,6 +41,7 @@ function get_base() {
         push: arrays.push,           // Base.push
         pushfirst: arrays.pushfirst, // Base.pushfirst
         splice: arrays.splice,       // Base.splice
+        map: arrays.map,             // Base.map
 
         // -- parse
         parse: parsing.parse,        // Base.parse

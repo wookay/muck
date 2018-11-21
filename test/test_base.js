@@ -66,6 +66,10 @@ Test.test_base_array = function() {
     A = [6, 5, 4, 3, 2, 1]
     assert_equal(2, splice(A, 5-1, [10, 11]))
     assert_equal([6, 5, 4, 3, 10, 11, 1], A)
+
+    let map = Base.map
+    a = map(Number, ["1", "2"])
+    assert_equal([1, 2], a)
 }
 
 Test.test_base_parse = function() {

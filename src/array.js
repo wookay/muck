@@ -20,9 +20,14 @@ function splice(a, i, replacement=[]) {
     }
 }
 
+function map(f, a) {
+    return a.map(f)
+}
+
 
 module.exports = {
     push,
     pushfirst,
     splice,
+    map,
 }

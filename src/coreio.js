@@ -14,15 +14,14 @@ IOBuffer.prototype.constructor = IOBuffer
 function TTY() {
 }
 
-function concatBuffer(a, b) {
-    var tmp = new Uint8Array(a.byteLength + b.byteLength)
-    tmp.set(new Uint8Array(a), 0)
-    tmp.set(new Uint8Array(b), a.byteLength)
-    return tmp.buffer
-}
-
 function println(io, ...args) {
     if (Meta.isa(io, IOBuffer)) {
+        function concatBuffer(a, b) {
+            var tmp = new Uint8Array(a.byteLength + b.byteLength)
+            tmp.set(new Uint8Array(a), 0)
+            tmp.set(new Uint8Array(b), a.byteLength)
+            return tmp.buffer
+        }
         arr = new TextEncoder().encode(strings.string(args, '\n'))
         io.data = concatBuffer(io.data, arr)
         io.ptr += arr.length
