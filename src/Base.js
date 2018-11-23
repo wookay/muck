@@ -29,6 +29,8 @@ function get_base() {
         // -- strings
         String: strings.String,      // Base.String
         string: strings.string,      // Base.string
+        split: strings.split,        // Base.split
+        join: strings.join,          // Base.join
         repr: strings.repr,          // Base.repr
 
         // -- range

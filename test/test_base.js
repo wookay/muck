@@ -26,6 +26,12 @@ Test.test_base_coreio = function() {
 }
 
 Test.test_base_strings = function() {
+    let split = Base.split
+    let join = Base.join
+    assert_equal(split("a,b,c"), ["a,b,c"])
+    assert_equal(split("a,b,c", ','), ["a","b","c"])
+    assert_equal(join(["a","b","c"]), "abc")
+    assert_equal(join(["a","b","c"], ','), "a,b,c")
 }
 
 Test.test_base_range = function() {

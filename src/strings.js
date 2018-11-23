@@ -27,6 +27,18 @@ function string() {
     return out;
 }
 
+function split(str, dlm) {
+    return str.split(dlm)
+}
+
+function join(strings, delim) {
+    if (Meta.isundef(delim)) {
+        return strings.join("")
+    } else {
+        return strings.join(delim)
+    }
+}
+
 function repr(x) {
     let typ = typeof(x);
     let quot = '"';
@@ -40,5 +52,7 @@ function repr(x) {
 module.exports = {
     String: _String,
     string,
+    split,
+    join,
     repr,
 }
