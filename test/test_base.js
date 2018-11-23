@@ -36,7 +36,10 @@ Test.test_base_range = function() {
 
 Test.test_base_float = function() {
     let Inf = Base.Inf
+    let round = Base.round
+    let Int = Base.Int
     assert_true(Meta.isa(Inf, Number))
+    assert_equal(round(Int, 3.14), 3)
 }
 
 Test.test_base_array = function() {

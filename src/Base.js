@@ -36,6 +36,7 @@ function get_base() {
 
         // -- float
         Inf: floats.Inf,             // Base.Inf
+        round: floats.round,         // Base.round
 
         // -- array
         push: arrays.push,           // Base.push

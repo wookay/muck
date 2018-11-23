@@ -12,10 +12,10 @@ class Null {
 class Nothing {
 }
 
-class Int extends Number {
+function Int() {
 }
 
-class Float64 extends Number {
+function Float64() {
 }
 
 

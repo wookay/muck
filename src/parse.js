@@ -8,9 +8,9 @@ function parse(typ, str) {
     let Float64 = boot.Float64
     switch (typ) {
     case Int:
-       return parseInt(str)
+        return parseInt(str)
     case Float64:
-       return parseFloat(str)
+        return parseFloat(str)
     }
 }
 
