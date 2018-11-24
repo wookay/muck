@@ -1,5 +1,5 @@
-mucko.js
-========
+mucko.js 🍚
+===========
 
 [![Build Status](https://travis-ci.org/wookay/mucko.svg?branch=master)](https://travis-ci.org/wookay/mucko)
 
