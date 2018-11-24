@@ -22,24 +22,24 @@ function get_base() {
         Exception: boot.Exception,         // Base.Exception
         BoundsError: boot.BoundsError,     // Base.BoundsError
 
-        // -- coreio                       
+        // -- coreio
         println: coreio.println,           // Base.println
         IOBuffer: coreio.IOBuffer,         // Base.IOBuffer
         seekstart: coreio.seekstart,       // Base.seekstart
         read: coreio.read,                 // Base.read
         stdout: coreio.stdout,             // Base.stdout
 
-        // -- strings                      
+        // -- strings
         String: strings.String,            // Base.String
         string: strings.string,            // Base.string
         split: strings.split,              // Base.split
         join: strings.join,                // Base.join
         repr: strings.repr,                // Base.repr
 
-        // -- range                        
+        // -- range
         range: ranges.range,               // Base.range
 
-        // -- float                        
+        // -- float
         Inf: floats.Inf,                   // Base.Inf
         round: floats.round,               // Base.round
 
