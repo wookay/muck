@@ -4,11 +4,12 @@ function get_meta() {
     var boot = require("./boot.js")
     let DataType = boot.DataType
     let Undefined = boot.Undefined
+    let Exception = boot.Exception
     let Null = boot.Null
     Meta = {
         // Meta.isa
         isa: function(x, typ) {
-            return this.typeof(x) === typ
+            return this.typeof(x) === typ || x instanceof typ
         },
 
         // Meta.isundef
@@ -59,7 +60,7 @@ function get_meta() {
                 str = f.toString()
                 return str.substring(str.indexOf('{')+1, str.lastIndexOf('}')).trim()
             } else {
-                throw Error("Not a Function")
+                throw new Exception("Not a Function")
             }
         }
     }

@@ -18,6 +18,13 @@ function Int() {
 function Float64() {
 }
 
+class Exception extends Error {
+
+}
+
+class BoundsError extends Exception {
+}
+
 
 module.exports = {
     DataType,
@@ -28,4 +35,6 @@ module.exports = {
     Bool: Boolean,
     Int,
     Float64,
+    Exception,
+    BoundsError,
 }

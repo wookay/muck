@@ -3,9 +3,13 @@
 var mucko = require("../index.js")
 var Test = mucko.Test
 var Base = mucko.Base
+var Meta = mucko.Meta
 
 
 Test.test_base_boot = function() {
+    let BoundsError = Base.BoundsError
+    let Exception = Base.Exception
+    assert_true(Meta.isa(new BoundsError(""), Exception))
 }
 
 Test.test_base_coreio = function() {
@@ -28,10 +32,13 @@ Test.test_base_coreio = function() {
 Test.test_base_strings = function() {
     let split = Base.split
     let join = Base.join
+    let string = Base.string
     assert_equal(split("a,b,c"), ["a,b,c"])
     assert_equal(split("a,b,c", ','), ["a","b","c"])
     assert_equal(join(["a","b","c"]), "abc")
     assert_equal(join(["a","b","c"], ','), "a,b,c")
+    str = string("B", ": ", 1)
+    assert_equal(str, "B: 1")
 }
 
 Test.test_base_range = function() {
@@ -46,6 +53,17 @@ Test.test_base_float = function() {
     let Int = Base.Int
     assert_true(Meta.isa(Inf, Number))
     assert_equal(round(Int, 3.14), 3)
+}
+
+Test.test_base_abstractarray = function() {
+    let isempty = Base.isempty
+    let first = Base.first
+    let getindex = Base.getindex
+    let BoundsError = Base.BoundsError
+    assert_true(isempty([]))
+    test_throws(BoundsError, function() { first([]) })
+    assert_equal(first([5,6,7]), 5)
+    assert_equal(getindex([5,6,7], 1), 5)
 }
 
 Test.test_base_array = function() {

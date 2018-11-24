@@ -39,10 +39,11 @@ Test.test_meta_string = function() {
 }
 
 Test.test_meta_body = function() {
+    let Exception = Base.Exception
     function f() {
         return 1+2
     }
     assert_equal("return 1+2", Meta.body(f))
-    test_throws(Error, function() { Meta.body(1+2) })
-    test_throws(Error("Not a Function"), function() { Meta.body(1+2) })
+    test_throws(Exception, function() { Meta.body(1+2) })
+    test_throws(new Exception("Not a Function"), function() { Meta.body(1+2) })
 }

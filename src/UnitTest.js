@@ -63,10 +63,17 @@ test_throws = function(errmsg, f) {
     try {
         f()
     } catch (err) {
-        if (Error === errmsg) {
+        var boot = require("./boot.js")
+        let Exception = boot.Exception
+        if (err instanceof Exception) {
+            if (errmsg.message !== undefined) {
+                got_the_error = errmsg.message == err.message
+            } else {
+                got_the_error = true
+            }
+        } else if (err.prototype instanceof Exception) {
             got_the_error = true
-        } else if (errmsg.message == err.message) {
-            got_the_error = true
+        } else {
         }
     }
     if (!got_the_error) {
