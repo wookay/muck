@@ -1,5 +1,5 @@
-mucko.js 🍚
-===========
+mucko 🍚
+========
 
 [![Build Status](https://travis-ci.org/wookay/mucko.svg?branch=master)](https://travis-ci.org/wookay/mucko)
 
@@ -15,4 +15,5 @@ yarn add mucko
 
 
 ### Examples
- * jscat https://github.com/wookay/jscat
+  - jscat tests https://wookay.github.io/docs/mucko/jscat/test/
+  - mucko.ui tests https://wookay.github.io/docs/mucko/mucko.ui/test/

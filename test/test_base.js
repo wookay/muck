@@ -3,16 +3,10 @@
 var mucko = require("../index.js")
 var Test = mucko.Test
 var Base = mucko.Base
-var Meta = mucko.Meta
 
-
-Test.test_base_boot = function() {
-    let BoundsError = Base.BoundsError
-    let Exception = Base.Exception
-    assert_true(Meta.isa(new BoundsError(""), Exception))
-}
 
 Test.test_base_coreio = function() {
+    let Meta = Base.Meta
     let IOBuffer = Base.IOBuffer
     let println = Base.println
     let seekstart = Base.seekstart
@@ -48,6 +42,7 @@ Test.test_base_range = function() {
 }
 
 Test.test_base_float = function() {
+    let Meta = Base.Meta
     let Inf = Base.Inf
     let round = Base.round
     let Int = Base.Int
@@ -105,4 +100,11 @@ Test.test_base_parse = function() {
     let parse = Base.parse
     assert_equal(1, parse(Int, "1"))
     assert_equal(1.2, parse(Float64, "1.2"))
+}
+
+Test.test_base_meta = function() {
+    let Meta = Base.Meta
+    assert_true(Meta.isa(Base.Meta, Object))
+    assert_true(Meta.isa(Base.Core, Object))
+    assert_true(Meta.isa(Base.Sys, Object))
 }

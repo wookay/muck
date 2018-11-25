@@ -49,7 +49,12 @@ function get_base() {
         parse: parsing.parse,              // JL Base.parse
     }
     var Core = require("./Core.js")
+    var Meta = require("./Meta.js")
+    var Sys = require("./Sys.js")
     Base.mergeI(Base, Core)
+    Base.Core = Core
+    Base.Meta = Meta
+    Base.Sys = Sys
     return Base
 }
 

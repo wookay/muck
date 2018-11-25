@@ -7,10 +7,11 @@ var Base = mucko.Base
 
 
 Test.test_meta_typeof = function() {
-    let Null = Base.Null
-    let Undefined = Base.Undefined
-    let DataType = Base.DataType
-    let Bool = Base.Bool
+    let Core = Base.Core
+    let Null = Core.Null
+    let Undefined = Core.Undefined
+    let DataType = Core.DataType
+    let Bool = Core.Bool
     assert_equal(String, String)
     assert_equal(Null, Meta.typeof(null))
     assert_equal(String, Meta.typeof(""))
