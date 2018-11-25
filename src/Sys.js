@@ -11,6 +11,4 @@ function get_sys() {
 }
 
 
-module.exports = {
-    Sys: get_sys(),
-}
+module.exports = get_sys()

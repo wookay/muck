@@ -1,27 +1,16 @@
 // mucko Base.js
 
+
 function get_base() {
-    var boot = require("./boot.js")
     var coreio = require("./coreio.js")
     var strings = require("./strings.js")
     var ranges = require("./range.js")
     var floats = require("./float.js")
     var abstractarrays = require("./abstractarray.js")
+    var abstractdicts = require("./abstractdict.js")
     var arrays = require("./array.js")
     var parsing = require("./parse.js")
-    Base = {
-        // -- boot
-        DataType: boot.DataType,           // JL Base.DataType
-        Undefined: boot.Undefined,         // Base.Undefined
-        Null: boot.Null,                   // Base.Null
-        Nothing: boot.Nothing,             // JL Base.Nothing
-        nothing: boot.nothing,             // JL Base.nothing
-        Bool: boot.Bool,                   // JL Base.Bool
-        Int: boot.Int,                     // JL Base.Int
-        Float64: boot.Float64,             // JL Base.Float64
-        Exception: boot.Exception,         // JL Base.Exception
-        BoundsError: boot.BoundsError,     // JL Base.BoundsError
-
+    var Base = {
         // -- coreio
         println: coreio.println,           // JL Base.println
         IOBuffer: coreio.IOBuffer,         // JL Base.IOBuffer
@@ -30,7 +19,6 @@ function get_base() {
         stdout: coreio.stdout,             // JL Base.stdout
 
         // -- strings
-        String: strings.String,            // JL Base.String
         string: strings.string,            // JL Base.string
         split: strings.split,              // JL Base.split
         join: strings.join,                // JL Base.join
@@ -48,19 +36,22 @@ function get_base() {
         getindex: abstractarrays.getindex, // JL Base.getindex
         first: abstractarrays.first,       // JL Base.first
 
+        // -- abstractdict
+        mergeI: abstractdicts.mergeI,      // JL Base.merge!
+
         // -- array
-        push: arrays.push,                 // JL Base.push
-        pushfirst: arrays.pushfirst,       // JL Base.pushfirst
-        splice: arrays.splice,             // JL Base.splice
+        pushI: arrays.pushI,               // JL Base.push!
+        pushfirstI: arrays.pushfirstI,     // JL Base.pushfirst!
+        spliceI: arrays.spliceI,           // JL Base.splice!
         map: arrays.map,                   // JL Base.map
 
         // -- parse
         parse: parsing.parse,              // JL Base.parse
     }
+    var Core = require("./Core.js")
+    Base.mergeI(Base, Core)
     return Base
 }
 
 
-module.exports = {
-    Base: get_base(),
-}
+module.exports = get_base()

@@ -1,13 +1,14 @@
 // mucko util.js
 
-util = {
+function get_util() {
+    util = {
     // util.require
     require: function(path) {
         return require(path)
+    } // require
     }
+    return util
 }
 
 
-module.exports = {
-    util,
-}
+module.exports = get_util()

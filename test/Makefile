@@ -1,6 +1,9 @@
 test:
 	node runtests.js
 
+core:
+	node -e 'require("./test_core.js"); UnitTest.run(Test)'
+
 meta:
 	node -e 'require("./test_meta.js"); UnitTest.run(Test)'
 

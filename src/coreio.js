@@ -1,8 +1,7 @@
-// mucko Base coreio.js
+// mucko base/coreio.js
 
-var meta = require("./Meta.js")
-var Meta = meta.Meta
 var strings = require("./strings.js")
+var metas = require("./metas.js")
 
 
 function IOBuffer() {
@@ -15,7 +14,7 @@ function TTY() {
 }
 
 function println(io, ...args) {
-    if (Meta.isa(io, IOBuffer)) {
+    if (metas.isa(io, IOBuffer)) {
         function concatBuffer(a, b) {
             var tmp = new Uint8Array(a.byteLength + b.byteLength)
             tmp.set(new Uint8Array(a), 0)

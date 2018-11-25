@@ -67,31 +67,31 @@ Test.test_base_abstractarray = function() {
 }
 
 Test.test_base_array = function() {
-    let push = Base.push
+    let pushI = Base.pushI
     a = [1, 2, 3]
-    push(a, 5)
+    pushI(a, 5)
     assert_equal([1, 2, 3, 5], a)
 
-    let pushfirst = Base.pushfirst
+    let pushfirstI = Base.pushfirstI
     a = [1, 2, 3]
-    pushfirst(a, 5)
+    pushfirstI(a, 5)
     assert_equal([5, 1, 2, 3], a)
 
-    let splice = Base.splice
+    let spliceI = Base.spliceI
     A = [6, 5, 4, 3, 2, 1]
-    assert_equal(2, splice(A, 5-1))
+    assert_equal(2, spliceI(A, 5-1))
     assert_equal([6, 5, 4, 3, 1], A)
 
     A = [6, 5, 4, 3, 2, 1]
-    assert_equal(2, splice(A, 5-1, []))
+    assert_equal(2, spliceI(A, 5-1, []))
     assert_equal([6, 5, 4, 3, 1], A)
 
     A = [6, 5, 4, 3, 2, 1]
-    assert_equal(2, splice(A, 5-1, 10))
+    assert_equal(2, spliceI(A, 5-1, 10))
     assert_equal([6, 5, 4, 3, 10, 1], A)
 
     A = [6, 5, 4, 3, 2, 1]
-    assert_equal(2, splice(A, 5-1, [10, 11]))
+    assert_equal(2, spliceI(A, 5-1, [10, 11]))
     assert_equal([6, 5, 4, 3, 10, 11, 1], A)
 
     let map = Base.map

@@ -1,58 +1,55 @@
-// mucko Base strings.js
+// mucko base/strings.js
 
-var meta = require("./Meta.js")
-var boot = require("./boot.js")
-var Meta = meta.Meta
-
-
-function _String(buf) {
-    if (typeof Buffer === "undefined") {
-        return new TextDecoder('utf8').decode(buf)
-    } else {
-        return Buffer.from(buf).toString('utf8')
-    }
-}
-
-function string() {
-    let DataType = boot.DataType
-    var out = '';
-    for (var i=0; i < arguments.length; i++) {
-        let x = arguments[i];
-        if (Meta.typeof(x) == DataType) {
-            out += x.name;
+function get_strings() {
+    var boot = require("./boot.js")
+    var metas = require("./metas.js")
+    
+    strings = {
+    String: function (buf) {
+        if (typeof Buffer === "undefined") {
+            return new TextDecoder('utf8').decode(buf)
         } else {
-            out += x;
+            return Buffer.from(buf).toString('utf8')
         }
+    },
+    
+    string: function () {
+        let DataType = boot.DataType
+        var out = '';
+        for (var i=0; i < arguments.length; i++) {
+            let x = arguments[i];
+            if (metas.typeof(x) == DataType) {
+                out += x.name;
+            } else {
+                out += x;
+            }
+        }
+        return out;
+    },
+    
+    split: function (str, dlm) {
+        return str.split(dlm)
+    },
+    
+    join: function (strings, delim) {
+        if (metas.isundef(delim)) {
+            return strings.join("")
+        } else {
+            return strings.join(delim)
+        }
+    },
+    
+    repr: function (x) {
+        let typ = typeof(x);
+        let quot = '"';
+        switch (typ) {
+        case "string": return string(quot, x, quot);
+        default: return string(x);
+        }
+    },
     }
-    return out;
-}
-
-function split(str, dlm) {
-    return str.split(dlm)
-}
-
-function join(strings, delim) {
-    if (Meta.isundef(delim)) {
-        return strings.join("")
-    } else {
-        return strings.join(delim)
-    }
-}
-
-function repr(x) {
-    let typ = typeof(x);
-    let quot = '"';
-    switch (typ) {
-    case "string": return string(quot, x, quot);
-    default: return string(x);
-    }
+    return strings
 }
 
 
-module.exports = {
-    String: _String,
-    string,
-    split,
-    join,
-    repr,
-}
+module.exports = get_strings()
