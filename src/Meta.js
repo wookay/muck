@@ -7,7 +7,7 @@ function get_meta() {
     let Exception = boot.Exception
     let Null = boot.Null
     Meta = {
-        // Meta.isa
+        // JL Meta.isa
         isa: function(x, typ) {
             return this.typeof(x) === typ || x instanceof typ
         },
@@ -17,7 +17,7 @@ function get_meta() {
             return x === undefined
         },
 
-        // Meta.typeof
+        // JL Meta.typeof
         typeof: function(x) {
             let typ = typeof(x)
             switch (typ) {
