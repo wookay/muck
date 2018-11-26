@@ -7,7 +7,7 @@ Julia (https://julialang.org/) style JavaScript programming.
 
 
 ### Yarn
- * Yarn mucko (https://yarn.pm/mucko)
+ * https://yarn.pm/mucko
 
 ```sh
 yarn add mucko
@@ -16,4 +16,4 @@ yarn add mucko
 
 ### Examples
   - jscat tests https://wookay.github.io/docs/mucko/jscat/test/
-  - mucko.ui tests https://wookay.github.io/docs/mucko/mucko.ui/test/
+  - mucko-ui tests https://wookay.github.io/docs/mucko/mucko-ui/test/
