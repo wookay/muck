@@ -1,4 +1,4 @@
-// mucko Base parse.js
+// mucko base/parse.js
 
 var boot = require("./boot.js")
 

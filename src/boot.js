@@ -1,4 +1,4 @@
-// mucko Base boot.js
+// mucko base/boot.js
 
 class DataType {
 }

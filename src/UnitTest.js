@@ -11,7 +11,7 @@ function print(str) {
     document.getElementById('stdout').innerHTML += str
   }
 }
-function puts(str) {
+function println(str) {
   print(str + LF)
 }
 
@@ -43,13 +43,13 @@ var _assert_equal = function(expected, got, is_true) {
     if (UnitTest.dot_if_passed) {
       print(DOT)
     } else {
-      puts('passed: ' + inspect(expected))
+      println('passed: ' + inspect(expected))
     }
   } else {
-    puts('\nAssertion failed in ' +
+    println('\nAssertion failed in ' +
          extract_filename_line_from_stack_trace())
-    puts('Expected: ' + inspect(expected))
-    puts('Got: ' + inspect(got))
+    println('Expected: ' + inspect(expected))
+    println('Got: ' + inspect(got))
     UnitTest.failed += 1
   }
 }
@@ -77,8 +77,8 @@ test_throws = function(errmsg, f) {
         }
     }
     if (!got_the_error) {
-        puts('\nAssertion failed in ' + f)
-        puts('Expected: ' + errmsg)
+        println('\nAssertion failed in ' + f)
+        println('Expected: ' + errmsg)
         UnitTest.failed += 1
     }
 }
@@ -89,13 +89,13 @@ var _assert_true = function(is_true) {
     if (UnitTest.dot_if_passed) {
       print(DOT)
     } else {
-      puts('passed: ' + true)
+      println('passed: ' + true)
     }
   } else {
-    puts('\nAssertion failed in ' +
+    println('\nAssertion failed in ' +
          extract_filename_line_from_stack_trace())
-    puts('Expected: ' + true)
-    puts('Got: ' + is_true)
+    println('Expected: ' + true)
+    println('Got: ' + is_true)
     UnitTest.failed += 1
   }
 }
@@ -121,7 +121,7 @@ UnitTest = {
 
   run: function(test_target) {
     var startedAt = new Date()
-    puts('Started')
+    println('Started')
     for (var test_name in test_target) {
       if (test_name.match(/^test_/)) {
         this.tests += 1
@@ -130,15 +130,18 @@ UnitTest = {
     }
     var finishedAt = new Date()
     var elapsed = (finishedAt - startedAt) / 1000
-    puts('\nFinished in ' + elapsed + ' seconds.')
+    println('\nFinished in ' + elapsed + ' seconds.')
     this.report()
   },
 
   report: function() {
-    puts(this.tests + ' tests, ' +
-         this.passed + ' assertions, ' +
-         this.failed + ' failures, ' +
-         this.errors + ' errors')
+    if (this.failed == 0 && this.passed > 0) {
+      print("✅  ")
+    }
+    println(this.tests + ' tests, ' +
+      this.passed + ' assertions, ' +
+      this.failed + ' failures, ' +
+      this.errors + ' errors')
   },
 }
 

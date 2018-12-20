@@ -1,4 +1,4 @@
-// mucko Base range.js
+// mucko base/range.js
 
 var boot = require("./boot.js")
 let nothing = boot.nothing

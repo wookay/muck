@@ -38,6 +38,10 @@ function get_strings() {
             return strings.join(delim)
         }
     },
+
+    strip: function (s) { 
+        return s.trim()
+    },
     
     repr: function (x) {
         let typ = typeof(x);
@@ -46,8 +50,9 @@ function get_strings() {
         case "string": return string(quot, x, quot);
         default: return string(x);
         }
-    },
     }
+    }
+
     return strings
 }
 

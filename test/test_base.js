@@ -27,12 +27,15 @@ Test.test_base_strings = function() {
     let split = Base.split
     let join = Base.join
     let string = Base.string
+    let strip = Base.strip
     assert_equal(split("a,b,c"), ["a,b,c"])
     assert_equal(split("a,b,c", ','), ["a","b","c"])
     assert_equal(join(["a","b","c"]), "abc")
     assert_equal(join(["a","b","c"], ','), "a,b,c")
     str = string("B", ": ", 1)
     assert_equal(str, "B: 1")
+    assert_equal("a", strip("a"))
+    assert_equal("a", strip(" a "))
 }
 
 Test.test_base_range = function() {
@@ -59,6 +62,11 @@ Test.test_base_abstractarray = function() {
     test_throws(BoundsError, function() { first([]) })
     assert_equal(first([5,6,7]), 5)
     assert_equal(getindex([5,6,7], 1), 5)
+}
+
+Test.test_base_abstractarraymath = function() {
+    let repeat = Base.repeat
+    assert_equal(repeat([5,6,7], 3), [5,6,7,5,6,7,5,6,7])
 }
 
 Test.test_base_array = function() {

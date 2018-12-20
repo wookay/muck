@@ -1,4 +1,4 @@
-// mucko Base float.js
+// mucko base/float.js
 
 var boot = require("./boot.js")
 

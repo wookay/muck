@@ -1,4 +1,4 @@
-// mucko Base abstractarray.js
+// mucko base/abstractarray.js
 
 var boot = require("./boot.js")
 var strings = require("./strings.js")

@@ -7,6 +7,7 @@ function get_base() {
     var ranges = require("./range.js")
     var floats = require("./float.js")
     var abstractarrays = require("./abstractarray.js")
+    var abstractarraymath = require("./abstractarraymath.js")
     var abstractdicts = require("./abstractdict.js")
     var arrays = require("./array.js")
     var parsing = require("./parse.js")
@@ -23,6 +24,7 @@ function get_base() {
         split: strings.split,              // JL Base.split
         join: strings.join,                // JL Base.join
         repr: strings.repr,                // JL Base.repr
+        strip: strings.strip,              // JL Base.strip
 
         // -- range
         range: ranges.range,               // JL Base.range
@@ -35,6 +37,9 @@ function get_base() {
         isempty: abstractarrays.isempty,   // JL Base.isempty
         getindex: abstractarrays.getindex, // JL Base.getindex
         first: abstractarrays.first,       // JL Base.first
+
+        // -- abstractarraymath
+        repeat: abstractarraymath.repeat,  // JL Base.repeat
 
         // -- abstractdict
         mergeI: abstractdicts.mergeI,      // JL Base.merge!

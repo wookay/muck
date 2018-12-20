@@ -1,4 +1,4 @@
-// mucko Base array.js
+// mucko base/array.js
 
 function get_arrays() {
     var metas = require("./metas.js")
